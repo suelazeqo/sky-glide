@@ -7,7 +7,8 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "webpack --config webpack.prod.js",
     "dev":  "webpack serve --config webpack.common.js",
-    "dev-fb": "webpack serve --config webpack.fb.js"
+    "dev-fb": "webpack serve --config webpack.fb.js",
+    "deploy": "npm run build && Copy-Item -Recurse -Force build\\* . && git add . && git commit -m \"Update Phaser game\" && git push origin gh-pages"
   },
   "author": "",
   "license": "ISC",
